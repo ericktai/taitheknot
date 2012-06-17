@@ -137,7 +137,7 @@ a.more_about{ width:103px; height:41px; background:url(images/more_about_bg.png)
 
 .section_home h2{ width:264px; height:38px; background:url(images/title_bg.gif) no-repeat center; line-height:38px; padding:0 0 0 15px; margin:0 0 25px 0;}
 .section_home h2 span{ color:#FFFFFF; text-shadow:1px 1px #b48a38;}
-.section_home img{ border:0px; margin: 10px 0px;}
+.section_home img{ border:0px; margin: 10px 0px; }
 a.section_more{margin:10px auto auto auto; display:block; text-align:center;}
 
 #turtlebaylogo img { margin-bottom: 20px; }
