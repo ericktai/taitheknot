@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('#rsvpsubmit').submit(function() {
-    var user = new StackMob.User($(this).serialize());
+    var user = new StackMob.User($(this).serializeObject());
     user.create({
       success: function(model) {
         $('#formcontainer').hide();
