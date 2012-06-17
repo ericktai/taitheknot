@@ -4,7 +4,7 @@ $(document).ready(function() {
     obj['username'] = obj['email'];
     obj['password'] = obj['name'];
     
-    var user = new StackMob.User();
+    var user = new StackMob.User(obj);
     user.create({
       success: function(model) {
         $('#formcontainer').hide();
