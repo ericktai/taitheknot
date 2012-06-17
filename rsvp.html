@@ -189,22 +189,52 @@ var $ = jQuery.noConflict();
                     <div class="form_row_rsvp">
                     <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" value="notattending"/></div> <span class="checkbox_value">No, I (we) will not be attending.</span>  
                 </div>
-           		</div>
-           		<div class="form_rsvp">
-           <h3 class="form_subtitle">Guest Details</h3>
-          		<div class="form">
-                    <div class="form_row">
-                    <label># of Guests:</label>
+                 <div class="form_row">
+                    <label>Total People:</label>
                     <div class="select_container">
-                    <select class="form_select">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <select class="form_select" name="wedding_guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                     </select>
                     </div>
                     </div>
+          			
+                
+           		</div>
+           		
+           		<div class="form_rsvp">
+           <h3 class="form_subtitle">Will you stay at the provided Turtle Bay room on 9/8?</h3>
+          		<div class="form">
+                    <div class="form_row_rsvp">
+                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" value="attending" /></div> <span class="checkbox_value">Yes, I (we) will be staying at the provided accommodations.</span>  
+                    </div>
+                    <div class="form_row_rsvp">
+                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" value="notattending"/></div> <span class="checkbox_value">No, I (we) will arrange my (our) own accommodations.</span>  
+                </div>
+          			</div>
+          			
+          			                    <div class="form_row">
+                    <label>Total People:</label>
+                    <div class="select_container">
+                    <select class="form_select" name="room_guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    </select>
+                    </div>
+                    </div>
+                    
+                    <div class="form_row_rsvp">* 1 room per party.</div>
+          			
+          		</div>
+          		
+           		<div class="form_rsvp">
+           <h3 class="form_subtitle">Contact Information</h3>
+          		<div class="form">
+
                     <div class="form_row">
                     <label>your name:</label>
                     <input type="text" class="form_input" name="name" />
@@ -222,7 +252,7 @@ var $ = jQuery.noConflict();
                     <input type="text" class="form_input" name="address" />
                     </div>
                     <div class="form_row">
-                    <label>comments:</label>
+                    <label>comments/room requests:</label>
                     <textarea class="form_textarea" name="comments"></textarea>
                     </div>
                     <div class="form_row">
@@ -230,6 +260,7 @@ var $ = jQuery.noConflict();
                     </div> 
           			</div>
           		</div>
+          		
                 
                 </form>
             </div>
