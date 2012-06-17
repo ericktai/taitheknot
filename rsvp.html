@@ -24,6 +24,12 @@
 <script type="text/javascript" src="js/custom.quicksand.js"></script>
 <!-- DropDownMenu -->
 <script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/json2-min.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/underscore-1.3.3-min.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/backbone-0.9.2-min.js"></script>
+<script type="text/javascript" src="http://static.stackmob.com/js/stackmob-js-0.4.0-min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+
 <script type="text/javascript" charset="utf-8">
 var $ = jQuery.noConflict();
   $(window).load(function() {
@@ -68,6 +74,17 @@ var $ = jQuery.noConflict();
 	});
   });
 </script>
+<style type="text/css">
+	#rsvpsubmitted { display: none; }
+</style>
+<script type="text/javascript">
+  StackMob.init({
+    appName: "taitheknot",
+    clientSubdomain: "tai",
+    publicKey: "17d8df8a-f4a3-4178-b965-345c198c2e03",
+    apiVersion: 0
+  });
+</script>
 </head>
 <body>
 <div id="shadow_bg">
@@ -77,33 +94,47 @@ var $ = jQuery.noConflict();
     <a class="hide_menu" href="#">close menu</a>
 	
     <div class="menu">                                                                   
-        <ul id="main_menu">
-        	<li><a href="index.html">Home</a></li>
-            <li><a href="page.html">Our wedding</a></li>
-            <li><a href="fullwidth.html">Drop down</a>
-            <ul>
-                <li><a href="fullwidth.html">full width</a></li>
-                <li><a href="gallery.html">gallery layout</a></li>
-                <li><a href="blog.html">blog layout</a></li>
-                <li><a href="contact.html">contact form</a></li>
-            </ul>
-            </li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="gallery.html">Photo Album</a></li>
-            <li><a class="selected" href="rsvp.html">RSVP</a></li>
-            <li><a href="contact.html">Contact</a></li> 
-        </ul>
+				<ul id="main_menu">
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+				<!-- 	<li>
+						<a href="page.html">Our Wedding</a>
+						<ul>
+							<li>
+								<a href="gallery.html">Our Stories</a>
+							</li>
+							<li>
+								<a href="fullwidth.html">When &amp; Where</a>
+							</li>
+							<li>
+								<a href="contact.html">Directions</a>
+							</li>
+							<li>
+								<a href="contact.html">Accommodations</a>
+							</li>
+						</ul>					
+					</li> -->
+					<li>
+						<a class="selected" href="rsvp.html">RSVP</a>
+					</li>
+				</ul>
      </div>
 	
 
 <div id="center_container">
 
   <div id="header">
-     
-     <div class="title"><a href="index.html">Michael &amp; Sarah</a></div>
-     <div class="description"><span class="swirl_left"><span class="swirl_right">25 june 2012</span></span></div>
-     
-  </div><!-- End of Header-->
+		<div class="title">
+			<a href="index.html">Josephine &amp; Erick</a>
+		</div>
+		<div class="title">
+			<a href="index.html">Alice &amp; Matthew</a>
+		</div>
+		<div class="description">
+			<span class="swirl_left"><span class="swirl_right">8 september 2012 ~ Turtle Bay Resort, Oahu, Hawaii</span></span>
+		</div>
+	</div><!-- End of Header-->
      
 
   <div class="pages_title">
@@ -112,74 +143,29 @@ var $ = jQuery.noConflict();
    
    <div class="content">
         <div class="left23">
-    
-			<div class="form_content">
+    	<div id="rsvpsubmitted">
+    		<span class="swirl_left"><span class="swirl_right">Thank you for RSVP-ing!</span></span>
+    	</div>
+			<div id="formcontainer" class="form_content">
             
             
             
-                <form id="form1" method="post" action="">
- 			<h3 class="form_subtitle">Select Event</h3>
+                <form id="rsvpsubmit" method="post" action="">
+
+ 			<h3 class="form_subtitle">Will you be attending?</h3>
             	<div class="form_rsvp">
                     <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="checkbox" class="form_checkbox" /></div> <span class="checkbox_value">Wedding Ceremony</span>  <span class="date_value"> (at 13.08.2011)</span>
+                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" value="attending" /></div> <span class="checkbox_value">Yes, I (we) will be attending.</span>  
                     </div>
                     <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="checkbox" class="form_checkbox" /></div> <span class="checkbox_value">Bridal Shower</span>  <span class="date_value"> (at 12.08.2011)</span>
-                    </div>
-                    <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="checkbox" class="form_checkbox" /></div> <span class="checkbox_value">Bachelor Party</span>  <span class="date_value"> (at 12.08.2011)</span>
-                    </div>
-                    <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="checkbox" class="form_checkbox" /></div> <span class="checkbox_value">Sunday Brunch</span> <span class="date_value"> (at 15.08.2011)</span> 
-                    </div>
+                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" value="notattending"/></div> <span class="checkbox_value">No, I (we) will not be attending.</span>  
                 </div>
-                
- 			<h3 class="form_subtitle">Will you be attending at the event selected</h3>
-            	<div class="form_rsvp">
-                    <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" /></div> <span class="checkbox_value">Yes, I (we) will be attending.</span>  
-                    </div>
-                    <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" /></div> <span class="checkbox_value">No, I (we) will not be attending.</span>  
-                    </div>
-                    <div class="form_row_rsvp">
-                    <div class="checkbox_container"><input type="radio" class="form_radio" name="attending" /></div> <span class="checkbox_value">Not Sure</span>  
-                    </div>
-                </div>
-           <h3 class="form_subtitle">Please select a meal choice</h3>
-          		<div class="form">
-                    <div class="form_row">
-                    <label>Main</label>
-                    <div class="select_container">
-                    <select class="form_select">
-                    <option>Chicken</option>
-                    <option>Beef</option>
-                    <option>Fish</option>
-                    <option>Vegetarian</option>
-                    </select>
-                    </div>
-                    </div>
-                    <div class="form_row">
-                    <label>Desert</label>
-                    <div class="select_container">
-                    <select class="form_select">
-                    <option>Chocolate Cake</option>
-                    <option>Cup Cookies</option>
-                    <option>Pumpkin Cheesecake</option>
-                    <option>Raspberry Cheesecake</option>
-                    </select>
-                    </div>
-                    </div>
-                    <div class="form_row">
-                    <label>menu notes:</label>
-                    <textarea class="form_textarea" name="comment"></textarea>
-                    </div>
-          		</div>
-                
+           		</div>
+           		<div class="form_rsvp">
            <h3 class="form_subtitle">Guest Details</h3>
           		<div class="form">
                     <div class="form_row">
-                    <label>nr of guests:</label>
+                    <label># of Guests:</label>
                     <div class="select_container">
                     <select class="form_select">
                     <option>1</option>
@@ -200,11 +186,15 @@ var $ = jQuery.noConflict();
                     </div>
                     <div class="form_row">
                     <label>phone:</label>
-                    <input type="text" class="form_input" name="url" />
+                    <input type="text" class="form_input" name="phone" />
+                    </div>
+                    <div class="form_row">
+                    <label>address:</label>
+                    <input type="text" class="form_input" name="address" />
                     </div>
                     <div class="form_row">
                     <label>comments:</label>
-                    <textarea class="form_textarea" name="comment"></textarea>
+                    <textarea class="form_textarea" name="comments"></textarea>
                     </div>
                     <div class="form_row">
                     <input type="submit" class="form_submit_contact" value="Add RSVP" />
@@ -213,34 +203,6 @@ var $ = jQuery.noConflict();
                 
                 </form>
             </div>
-             
-        </div>
-		
-   		<div class="left13 sidebar">
-        
-			<h2>Wedding Location</h2>
-<div class="gmap"><iframe width="100%" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=houston+usa&amp;hl=ro&amp;sll=37.0625,-95.677068&amp;sspn=53.961216,114.169922&amp;hnear=Houston,+Harris,+Texas&amp;t=m&amp;z=5&output=embed"></iframe></div>
-
-            
-            <h2>Latest Blog Posts</h2>
-			<ul>
-                <li><a href="#">Sed do eiusmod tempor</a></li> 
-                <li><a href="#">Incididunt ut labore et dolore </a></li>
-                <li><a href="#">Lolor sit amet  consectetur adipisicing </a></li>
-                <li><a href="#">Elit  sed do eiusmod tempor </a></li>
-                <li><a href="#">Incididunt ut labore et dolore magna aliqua</a></li>
-            </ul>
-            
-            <h2>Latest tweets</h2>
-            <div class="tweet"></div>
-            <img src="images/icon_tweets.gif" alt="" title="" class="tweet_icon" />
-            
-            <h2>Flickr photos</h2>
-            <div class="flickr_photos">
-            <ul id="basicuse" class="thumbs"></ul>
-            </div>
-            
-            
              
         </div>
 		
@@ -259,16 +221,12 @@ var $ = jQuery.noConflict();
    <div class="footer">
        <div class="footer_content">
        <div class="footer_text">
-       Marriage | Premium Wedding Template by <a href="http://famousthemes.com">Famous Themes</a> <br />
-       Photos by <a href="http://antondemin.ru/" target="_blank">antondemin.ru</a>
+       Josephine &amp; Erick | Alice &amp; Matthew
        </div>
        <div class="footer_menu">
            <ul>
-           <li class="selected"><a href="index.html">Home</a></li>             
-           <li><a href="blog.html">Blog </a></li>             
-           <li><a href="gallery.html">Photo Album </a></li>             
-           <li><a href="rsvp.html">RSVP</a></li>               
-           <li><a href="contact.html">Contact</a></li> 
+           <li><a href="index.html">Home</a></li>             
+           <li><a class="selected" href="rsvp.html">RSVP</a></li>               
            <li><a onclick="jQuery('html, body').animate( { scrollTop: 0 }, 'slow' );"  href="javascript:void(0);" class="gotop" title="Go on top">TOP</a> </li>
            </ul>
        </div>
